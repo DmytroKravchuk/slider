@@ -41,6 +41,12 @@ window.onload = function() {
             });
         }
 
+        destroy(eventType) {
+            eventType.forEach(el => {
+                el.target().removeEventListener(el.event, el.handler)
+            });
+        }
+
         setClickPosition(e) {
             if(e.target === this.thumb) return;
             let cordXSlider = this.slider.getBoundingClientRect().x;
