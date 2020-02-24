@@ -45,7 +45,7 @@ window.onload = function() {
             });
         }
 
-        destroy(eventType) {
+        destroy() {
             this.events.forEach(el => {
                 el.target().removeEventListener(el.event, el.handler)
             });
@@ -96,6 +96,10 @@ window.onload = function() {
                 this.barValue.innerHTML = value;
                 this.thumb.style.left = this._calcCorrectValue(value) + 'px';
             }
+        }
+
+        getValue() {
+            return this.barValue.innerText;
         }
 
         _createBarValue() {

@@ -53,6 +53,7 @@
     transform: translateX(-50%);
     padding: 3px;
     background: #ccc;
+    user-select: none;
 }
 
 .value:before {
