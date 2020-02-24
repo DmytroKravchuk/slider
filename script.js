@@ -1,6 +1,6 @@
 "use strict";
 window.onload = function() {
-    
+
     class SLider {
         constructor(slider, thumb) {
             this.slider = document.querySelector(slider);
@@ -28,7 +28,7 @@ window.onload = function() {
                     'handler': () => false
                 }
             ]
-        }
+        };
 
         init() {
             this.initEvents(this.events.thumbCLick);
@@ -56,8 +56,9 @@ window.onload = function() {
 
         setDragPosition(e) {
             let shiftX = e.clientX - e.target.getBoundingClientRect().left;
-            
-            document.addEventListener('mousemove', onMouseMove.bind(this));
+            let mouseMove = onMouseMove.bind(this);
+
+            document.addEventListener('mousemove', mouseMove);
             document.addEventListener('mouseup', onMouseUp);
 
             function onMouseMove(e) {
@@ -76,7 +77,7 @@ window.onload = function() {
             }
 
             function onMouseUp() {
-                document.removeEventListener('mousemove', onMouseMove.bind(this));
+                document.removeEventListener('mousemove', mouseMove);
                 document.removeEventListener('mousemove', onMouseUp);
             }
 
@@ -85,4 +86,4 @@ window.onload = function() {
 
     const slider = new SLider('#slider', '.thumb');
     slider.init();
-}
+};
