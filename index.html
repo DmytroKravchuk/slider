@@ -8,8 +8,22 @@
     <title>Document</title>
 </head>
 <body>
-    <div id="slider" class="slider">
-        <div class="thumb"></div>
+    <div class="slider-wrapper" id="slider-wrapper">
+        <div class="slider">
+            <div class="thumb"></div>
+        </div>
+        <div class="slider-value"></div>
     </div>
+
+    <script>
+        var slider = new Slider('#slider-wrapper', {
+            min: 0,
+            max: 100,
+            value: 0,
+            measurementUnit: '%',
+            step: 10
+        });
+        slider.init()
+    </script>
 </body>
 </html>
